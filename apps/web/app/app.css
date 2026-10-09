@@ -280,6 +280,12 @@
     scrollbar-width: thin;
     scrollbar-color: var(--line-strong) transparent;
   }
+  /* Keep the outline's gutter in place; reveal the thumb for pointer or keyboard use. */
+  @media (hover: hover) {
+    .article-outline:not(:hover):not(:focus-visible):not(:has(:focus-visible)) {
+      scrollbar-color: transparent transparent;
+    }
+  }
   /* <details> without the native marker (source lists, method notes). */
   .disclosure > summary {
     list-style: none;
